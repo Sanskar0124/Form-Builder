@@ -33,3 +33,12 @@ exports.getFormById = async (req, res) => {
         res.json({ message: error.message });
     }
 };
+
+exports.deleteForm = async (req, res) => {
+    try {
+        const removedForm = await Form.deleteOne({ _id: req.params.formId });
+        res.json(removedForm);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
