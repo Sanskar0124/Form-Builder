@@ -1,0 +1,12 @@
+[build]
+  command = "npm run build"
+  functions = "api/"
+
+[[redirects]]
+  from = "/api/*"
+  to = "http://localhost:5000/:splat"
+  status = 200
+  force = true
+
+[dev]
+  functionsPort = 5000
